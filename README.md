@@ -1,4 +1,4 @@
-# VocabularyEnglishApp (in progress)
+# Vocabulary English App (in progress)
 The aidea here is to make an app that shows a word in English, play the pronunciation audio and four alternatives for transaltions in English.
 
 There will be a score and a timer.
