@@ -1,8 +1,6 @@
 # Vocabulary English App (in progress)
-The aidea here is to make an app that shows a word in English, play the pronunciation audio and four alternatives for transaltions in English.
+The idea here is to make an app that shows a word in English, play the pronunciation audio and four alternatives for transaltions in English.
 
-There will be a score and a timer.
+There is a score, a timer and a audio replay button.
 
-There will be two game modes, *Practice Mode* (no time) and *30s*. I will add more game modes after if possible. (TODO: Make a manual for how to add a new game mode)
-
-Need to do it scalable for easy adition of words and translations.
+There is the option to disable/enable the countdown timer.
