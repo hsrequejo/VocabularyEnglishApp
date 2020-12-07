@@ -55,19 +55,22 @@ public class GameManager : MonoBehaviour
 
     public int maxTime;
 
+    public bool timerOn;
+
     int correctAnswerIndex = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        timeRemaining = 10f;
+        timeRemaining = 30f;
         score = 0;
+        timerOn = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gameStarted)
+        if (gameStarted && timerOn)
         {
             //start the timer
             if (timeRemaining >= 0)
@@ -78,7 +81,7 @@ public class GameManager : MonoBehaviour
             else if (timeRemaining <= 0)
             {
                 GameOver();
-            }            
+            }
         }
     }
 
@@ -161,7 +164,7 @@ public class GameManager : MonoBehaviour
     IEnumerator DelayDisableWarning(TextMeshProUGUI warning)
     {
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
 
         warning.gameObject.SetActive(false);
         ResetBoard();
@@ -240,13 +243,22 @@ public class GameManager : MonoBehaviour
         finalScore.SetText("Final Score: {0:0}", score);
         highScore.SetText("High Score: ***");
     }
-
-
-
     IEnumerator TimeIsUp()
     {
         
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(1f);
         timeIsUpPanel.SetActive(false);
+    }
+
+    public void disableTimer()
+    {
+        timerOn = false;
+        timerDisplay.gameObject.SetActive(false);
+    }
+
+    public void enableTimer()
+    {
+        timerOn = true;
+        timerDisplay.gameObject.SetActive(true);
     }
 }
